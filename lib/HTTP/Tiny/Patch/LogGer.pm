@@ -34,7 +34,7 @@ my $p_write = sub {
     my ($self, $buf) = @_;
     if ($self->{_is_writing_header_lines}) {
         if ($config{-log_request} && log_is_trace()) {
-            log_trace("HTTP::Tiny request header (raw):\n%s", $buf);
+            log_trace("HTTP::Tiny request header (raw, %d bytes):\n%s", $buf);
         }
         undef $self->{_is_writing_header_lines};
     }
@@ -51,7 +51,7 @@ my $p_request = sub {
                   $method, $url,
                   _render_headers($hh));
         if ($config{-log_request_content} && defined $args->{content}) {
-            log_trace("HTTP::Tiny request body (%d byte(s)):\n%s\n",
+            log_trace("HTTP::Tiny request body (%d bytes):\n%s\n",
                       length($args->{content} // ''),
                       $args->{content})
         }
@@ -162,6 +162,8 @@ Currently *NOT* the raw/on-the-wire response.
 =head1 CONFIGURATION
 
 =head2 -log_request => BOOL
+
+=head2 -log_request_content => BOOL
 
 =head2 -log_response => BOOL
 
