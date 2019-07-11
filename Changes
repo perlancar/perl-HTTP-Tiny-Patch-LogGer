@@ -1,14 +1,14 @@
-0.003   2019-06-09 (PERLANCAR)
+0.003   2019-06-09  Released-By: PERLANCAR
 
 	- [ux] Add alias for convenience: Log::ger::For::HTTP::Tiny.
 
 
-0.002   2019-04-21 (PERLANCAR)
+0.002   2019-04-21  Released-By: PERLANCAR
 
 	- Log raw request too (to see headers like User-Agent); add
 	  configuration -log_request_content.
 
 
-0.001   2017-07-10 (PERLANCAR)
+0.001   2017-07-10  Released-By: PERLANCAR
 
         - First release.
